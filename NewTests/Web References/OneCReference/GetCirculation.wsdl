@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd1="http://www.sample-package.org" xmlns:xsd2="http://www.GetStatus.org" xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.sample-package.org" name="GetCirculation" targetNamespace="http://www.sample-package.org" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema xmlns:tns="http://www.GetStatus.org" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.GetStatus.org" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ObjectCalculation">
+        <xs:sequence>
+          <xs:element name="ID" type="xs:string" />
+          <xs:element name="Type" type="xs:integer" />
+          <xs:element name="Status" type="xs:string" />
+          <xs:element name="LID" type="xs:string" />
+          <xs:element name="Circulation" type="xs:integer" />
+          <xs:element name="Manager" type="xs:string" />
+          <xs:element name="Comment" type="xs:string" />
+          <xs:element name="Specification" type="xs:string" />
+          <xs:element name="DateExecute" type="xs:dateTime" />
+          <xs:element name="LIDBuyer" type="xs:string" />
+          <xs:element name="Buyer" type="xs:string" />
+          <xs:element name="ContactPerson" type="xs:string" />
+          <xs:element name="DateDoc" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:xs2="http://www.sample-package.org" xmlns:xs1="http://www.GetStatus.org" elementFormDefault="qualified" targetNamespace="http://www.sample-package.org" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.GetStatus.org" />
+      <xs:element name="GetDoc">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Object" type="xs1:ObjectCalculation" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDocResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </types>
+  <message name="GetDocRequestMessage">
+    <part name="parameters" element="tns:GetDoc" />
+  </message>
+  <message name="GetDocResponseMessage">
+    <part name="parameters" element="tns:GetDocResponse" />
+  </message>
+  <portType name="GetCirculationPortType">
+    <operation name="GetDoc">
+      <input message="tns:GetDocRequestMessage" />
+      <output message="tns:GetDocResponseMessage" />
+    </operation>
+  </portType>
+  <binding name="GetCirculationSoapBinding" type="tns:GetCirculationPortType">
+    <soapbind:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetDoc">
+      <soapbind:operation soapAction="http://www.sample-package.org#GetCirculation:GetDoc" style="document" />
+      <input>
+        <soapbind:body use="literal" />
+      </input>
+      <output>
+        <soapbind:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="GetCirculationSoap12Binding" type="tns:GetCirculationPortType">
+    <soap12bind:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetDoc">
+      <soap12bind:operation soapAction="http://www.sample-package.org#GetCirculation:GetDoc" style="document" />
+      <input>
+        <soap12bind:body use="literal" />
+      </input>
+      <output>
+        <soap12bind:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="GetCirculation">
+    <port name="GetCirculationSoap" binding="tns:GetCirculationSoapBinding">
+      <documentation>
+        <wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" conformsTo="http://ws-i.org/profiles/basic/1.1" />
+      </documentation>
+      <soapbind:address location="http://94.158.53.231:5000/Base_Test/ws/GetCirculation" />
+    </port>
+    <port name="GetCirculationSoap12" binding="tns:GetCirculationSoap12Binding">
+      <soap12bind:address location="http://94.158.53.231:5000/Base_Test/ws/GetCirculation" />
+    </port>
+  </service>
+</definitions>
