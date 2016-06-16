@@ -2,16 +2,25 @@
 using System.Collections.Generic;
 using System.Text;
 using NewTests.OneCReference;
+using NewTests.TestServiceBPM;
 
 namespace NewTests
 {
     public class IshonchService
     {
         private ObjectCalculation ObjectCalculation { get; set; }
+        private string Param1 { get; set; }
+        private string Param2 { get; set; }
 
         public IshonchService(ObjectCalculation objectCalculation)
         {
             this.ObjectCalculation = objectCalculation;
+        }
+
+        public IshonchService(string param1, string param2)
+        {
+            this.Param1 = param1;
+            this.Param2 = param2;
         }
 
         public void SendRequestTo1C()
@@ -28,52 +37,19 @@ namespace NewTests
                 }
             }
         }
-
-        /***
-         * var request = (HttpWebRequest)WebRequest.Create("http://94.158.53.231:5200/1/rest/TestServiceBpm/TestService");
-
-
-            //var data = Encoding.ASCII.GetBytes("{\"statusName\":\"test\",\"statusId\":\"eere\"}");
-            var data = Encoding.ASCII.GetBytes("<TestService xmlns=\"http://www.fuzh.com\">" +
-                       "<statusName>" +
-                       "test" +
-                       "</statusName>" +
-                       "<statusId>" +
-                       "eere" +
-                       "</statusId>" +
-                       "</TestService>");
-
-            request.Method = "POST";
-            request.ContentType = "application/json";
-            //request.ContentType = "application/json";
-            request.ContentLength = data.Length;
-            request.Accept = "application/json";
-            //request.Accept = "application/json";
-
-            using (var stream = request.GetRequestStream())
+        public void SendRequestToBPM()
+        {
+            using (var service = new TestServiceBPM.ServiceClient())
             {
-                stream.Write(data, 0, data.Length);
+
+
+                var res = service.TestService(this.Param1, this.Param2);
+                if (res != null)
+                {
+                    Console.WriteLine(res);
+                }
             }
-
-            var response = (HttpWebResponse)request.GetResponse();
-
-            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
-            
-            /*
-
-            using (var client = new WebClient())
-            {
-                var values = new NameValueCollection();
-                values["statusName"] = "hello";
-                values["statusId"] = "world";
-
-                var response = client.UploadValues("http://94.158.53.231:5200/1/rest/TestServiceBpm/TestService", values);
-
-                var responseString = Encoding.Default.GetString(response);
-                Console.WriteLine(responseString);
-            }
-            Console.WriteLine(responseString);
-         ***/
+        }
 
     }
 }

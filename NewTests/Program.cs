@@ -41,6 +41,9 @@ namespace NewTests
                 DateExecute = DateTime.Now,
                 DateDoc = DateTime.Now
             });
+
+            var bpm = new IshonchService("1", "2");
+            bpm.SendRequestToBPM();
             //ish.SendRequestTo1C();
              
 

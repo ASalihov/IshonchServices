@@ -68,6 +68,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Service References\TestServiceBPM\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Web References\OneCReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,6 +85,14 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\TestServiceBPM\TestServiceBpm.wsdl" />
+    <None Include="Service References\TestServiceBPM\TestServiceBpm.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TestServiceBPM\TestServiceBpm1.wsdl" />
+    <None Include="Service References\TestServiceBPM\TestServiceBpm1.xsd">
+      <SubType>Designer</SubType>
     </None>
     <None Include="Web References\OneCReference\GetCirculation.wsdl" />
     <None Include="Web References\OneCReference\Reference.map">
@@ -105,6 +118,24 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>NewTests_OneCReference_WebTest</CachedSettingsPropName>
     </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\TestServiceBPM\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TestServiceBPM\TestServiceBpm.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TestServiceBPM\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TestServiceBPM\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TestServiceBPM\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
