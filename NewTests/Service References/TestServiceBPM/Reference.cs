@@ -9,23 +9,134 @@
 //------------------------------------------------------------------------------
 
 namespace NewTests.TestServiceBPM {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CostCalculationObj", Namespace="http://schemas.datacontract.org/2004/07/Ishonch")]
+    [System.SerializableAttribute()]
+    public partial class CostCalculationObj : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal OrderPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime StartDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal UnitPriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal OrderPrice {
+            get {
+                return this.OrderPriceField;
+            }
+            set {
+                if ((this.OrderPriceField.Equals(value) != true)) {
+                    this.OrderPriceField = value;
+                    this.RaisePropertyChanged("OrderPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime StartDate {
+            get {
+                return this.StartDateField;
+            }
+            set {
+                if ((this.StartDateField.Equals(value) != true)) {
+                    this.StartDateField = value;
+                    this.RaisePropertyChanged("StartDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((this.StatusField.Equals(value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal UnitPrice {
+            get {
+                return this.UnitPriceField;
+            }
+            set {
+                if ((this.UnitPriceField.Equals(value) != true)) {
+                    this.UnitPriceField = value;
+                    this.RaisePropertyChanged("UnitPrice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TestServiceBPM.IService")]
     public interface IService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/TestService", ReplyAction="http://tempuri.org/IService/TestServiceResponse")]
-        string TestService(string statusName, string statusId);
+        string TestService(NewTests.TestServiceBPM.CostCalculationObj obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/TestService", ReplyAction="http://tempuri.org/IService/TestServiceResponse")]
-        System.Threading.Tasks.Task<string> TestServiceAsync(string statusName, string statusId);
+        System.Threading.Tasks.Task<string> TestServiceAsync(NewTests.TestServiceBPM.CostCalculationObj obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/TestService2", ReplyAction="http://tempuri.org/IService/TestService2Response")]
-        string TestService2(string statusName, string statusId);
+        string TestService2(NewTests.TestServiceBPM.CostCalculationObj obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/TestService2", ReplyAction="http://tempuri.org/IService/TestService2Response")]
-        System.Threading.Tasks.Task<string> TestService2Async(string statusName, string statusId);
+        System.Threading.Tasks.Task<string> TestService2Async(NewTests.TestServiceBPM.CostCalculationObj obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,20 +166,20 @@ namespace NewTests.TestServiceBPM {
                 base(binding, remoteAddress) {
         }
         
-        public string TestService(string statusName, string statusId) {
-            return base.Channel.TestService(statusName, statusId);
+        public string TestService(NewTests.TestServiceBPM.CostCalculationObj obj) {
+            return base.Channel.TestService(obj);
         }
         
-        public System.Threading.Tasks.Task<string> TestServiceAsync(string statusName, string statusId) {
-            return base.Channel.TestServiceAsync(statusName, statusId);
+        public System.Threading.Tasks.Task<string> TestServiceAsync(NewTests.TestServiceBPM.CostCalculationObj obj) {
+            return base.Channel.TestServiceAsync(obj);
         }
         
-        public string TestService2(string statusName, string statusId) {
-            return base.Channel.TestService2(statusName, statusId);
+        public string TestService2(NewTests.TestServiceBPM.CostCalculationObj obj) {
+            return base.Channel.TestService2(obj);
         }
         
-        public System.Threading.Tasks.Task<string> TestService2Async(string statusName, string statusId) {
-            return base.Channel.TestService2Async(statusName, statusId);
+        public System.Threading.Tasks.Task<string> TestService2Async(NewTests.TestServiceBPM.CostCalculationObj obj) {
+            return base.Channel.TestService2Async(obj);
         }
     }
 }

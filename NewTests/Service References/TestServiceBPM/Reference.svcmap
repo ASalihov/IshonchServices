@@ -22,11 +22,12 @@
     <MetadataSource Address="http://94.158.53.231:5200/1/ServiceModel/TestServiceBpm.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TestServiceBpm.wsdl" MetadataType="Wsdl" ID="8022eed2-08a0-448c-b083-e603f5fb2f74" SourceId="1" SourceUrl="http://94.158.53.231:5200/1/ServiceModel/TestServiceBpm.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="TestServiceBpm.xsd" MetadataType="Schema" ID="b9b44071-6f2c-4938-b71a-2e097f7b5fdb" SourceId="1" SourceUrl="http://94.158.53.231:5200/1/ServiceModel/TestServiceBpm.svc?xsd=xsd1" />
     <MetadataFile FileName="TestServiceBpm1.wsdl" MetadataType="Wsdl" ID="b69149c6-3e88-400a-b9fc-143f2d95cb2b" SourceId="1" SourceUrl="http://94.158.53.231:5200/1/ServiceModel/TestServiceBpm.svc?wsdl" />
+    <MetadataFile FileName="TestServiceBpm2.xsd" MetadataType="Schema" ID="e2259276-24e8-46d9-afaa-8a0723c85f2f" SourceId="1" SourceUrl="http://94.158.53.231:5200/1/ServiceModel/TestServiceBpm.svc?xsd=xsd2" />
     <MetadataFile FileName="TestServiceBpm1.xsd" MetadataType="Schema" ID="5c97ff6b-d639-4c1c-a727-be9fff7d50b6" SourceId="1" SourceUrl="http://94.158.53.231:5200/1/ServiceModel/TestServiceBpm.svc?xsd=xsd0" />
     <MetadataFile FileName="TestServiceBpm.disco" MetadataType="Disco" ID="66a80d84-762f-4285-abc4-dee425090b58" SourceId="1" SourceUrl="http://94.158.53.231:5200/1/ServiceModel/TestServiceBpm.svc?disco" />
+    <MetadataFile FileName="TestServiceBpm.wsdl" MetadataType="Wsdl" ID="8022eed2-08a0-448c-b083-e603f5fb2f74" SourceId="1" SourceUrl="http://94.158.53.231:5200/1/ServiceModel/TestServiceBpm.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TestServiceBpm.xsd" MetadataType="Schema" ID="b9b44071-6f2c-4938-b71a-2e097f7b5fdb" SourceId="1" SourceUrl="http://94.158.53.231:5200/1/ServiceModel/TestServiceBpm.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

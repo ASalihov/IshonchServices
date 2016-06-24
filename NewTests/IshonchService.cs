@@ -41,12 +41,21 @@ namespace NewTests
         {
             using (var service = new TestServiceBPM.ServiceClient())
             {
+                var obj = new CostCalculationObj
+                {
+                    Id = new Guid("fa39a7dd-34e4-4ca0-83b0-d7503c55ffbf"),
+                    Status = Guid.NewGuid(),
+                    StartDate = DateTime.Now,
+                    OrderPrice = 125,
+                    UnitPrice = 126
+                };
 
 
-                var res = service.TestService(this.Param1, this.Param2);
+                var res = service.TestService(obj);
                 if (res != null)
                 {
                     Console.WriteLine(res);
+                    Console.WriteLine(DateTime.MinValue);
                 }
             }
         }

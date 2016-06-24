@@ -94,6 +94,9 @@
     <None Include="Service References\TestServiceBPM\TestServiceBpm1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\TestServiceBPM\TestServiceBpm2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web References\OneCReference\GetCirculation.wsdl" />
     <None Include="Web References\OneCReference\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>

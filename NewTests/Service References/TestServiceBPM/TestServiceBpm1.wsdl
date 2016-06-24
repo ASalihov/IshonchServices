@@ -5,6 +5,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://94.158.53.231:5200/1/ServiceModel/TestServiceBpm.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://94.158.53.231:5200/1/ServiceModel/TestServiceBpm.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://94.158.53.231:5200/1/ServiceModel/TestServiceBpm.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ishonch" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService_TestService_InputMessage">
