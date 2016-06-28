@@ -78,6 +78,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="XmlParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

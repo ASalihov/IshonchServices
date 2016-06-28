@@ -43,7 +43,10 @@ namespace NewTests
             });
 
             var bpm = new IshonchService("1", "2");
-            bpm.SendRequestToBPM();
+            var xmlParser = new XmlParser();
+            xmlParser.LoadXmlDocument();
+
+            //bpm.SendRequestToBPM();
             //ish.SendRequestTo1C();
              
 
