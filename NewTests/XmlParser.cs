@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Net;
+using System.IO;
 
 namespace NewTests
 {
@@ -11,6 +13,25 @@ namespace NewTests
     {
         public void LoadXmlDocument()
         {
+            var dict = new Dictionary<string, string>
+            {
+                {"_PassportNumber"          , ""},
+                {"_DateOfIssue"             , ""},
+                {"_DateOfExpiry"            , ""},
+                {"_DateOfBirth"             , ""},
+                {"_Name"                    , ""},
+                {"_LastName"                , ""},
+                {"_Sex"                     , ""},
+                {"_MRZ1"                    , ""},
+                {"_MRZ2"                    , ""},
+                {"_TopFamiliyasi"           , ""},
+                {"_TopIsmi"                 , ""},
+                {"_TopOtasiningIsmi"        , ""},
+                {"_TopMillati"              , ""},
+                {"_TopKimTomonidanBerilgan" , ""},
+                {"_TopJinsi"                , ""}
+            };
+
             var xmlDoc = new XmlDocument();
             xmlDoc.Load("http://94.158.53.231:5200/xml.xml");
 
@@ -19,8 +40,16 @@ namespace NewTests
             var passportItems = Uz_Passport_MRZxRoot.FirstChild;
             foreach (XmlNode item in passportItems)
             {
-                var a = item;
+                dict[item.Name] = item.InnerText;
             }
+        }
+
+        public void LoadScanJpg()
+        {
+            
+            var webClient = new WebClient();
+            byte[] imageBytes = webClient.DownloadData("http://94.158.53.231:5200/1.jpg");
+            var a = imageBytes;
         }
         
     }

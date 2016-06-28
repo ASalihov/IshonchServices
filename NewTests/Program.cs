@@ -44,7 +44,8 @@ namespace NewTests
 
             var bpm = new IshonchService("1", "2");
             var xmlParser = new XmlParser();
-            xmlParser.LoadXmlDocument();
+            //xmlParser.LoadXmlDocument();
+            xmlParser.LoadScanJpg();
 
             //bpm.SendRequestToBPM();
             //ish.SendRequestTo1C();
