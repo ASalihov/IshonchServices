@@ -44,10 +44,10 @@ namespace NewTests
                 var obj = new CostCalculationObj
                 {
                     Id = new Guid("fa39a7dd-34e4-4ca0-83b0-d7503c55ffbf"),
-                    Status = Guid.NewGuid(),
+                    EndDate = DateTime.Now.AddHours(5),
                     StartDate = DateTime.Now,
-                    OrderPrice = 125,
-                    UnitPrice = 126
+                    OrderPrice = 10,
+                    UnitPrice = 12
                 };
 
 

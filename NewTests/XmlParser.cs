@@ -49,7 +49,11 @@ namespace NewTests
             
             var webClient = new WebClient();
             byte[] imageBytes = webClient.DownloadData("http://94.158.53.231:5200/1.jpg");
-            var a = imageBytes;
+
+            MemoryStream ms = new MemoryStream();
+            ms.Write(imageBytes, 0, imageBytes.Length);
+            var a = 7;
+
         }
         
     }

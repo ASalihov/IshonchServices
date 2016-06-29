@@ -24,6 +24,9 @@ namespace NewTests
     {
         static void Main(string[] args)
         {
+
+            var dt = "17/01/1979";
+            var cnvDate = Convert.ToDateTime(dt);
             
             var ish = new IshonchService(new ObjectCalculation
             {
@@ -45,9 +48,9 @@ namespace NewTests
             var bpm = new IshonchService("1", "2");
             var xmlParser = new XmlParser();
             //xmlParser.LoadXmlDocument();
-            xmlParser.LoadScanJpg();
+            //xmlParser.LoadScanJpg();
 
-            //bpm.SendRequestToBPM();
+            bpm.SendRequestToBPM();
             //ish.SendRequestTo1C();
              
 

@@ -3,10 +3,10 @@
   <xs:import schemaLocation="http://94.158.53.231:5200/1/ServiceModel/TestServiceBpm.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="CostCalculationObj">
     <xs:sequence>
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" type="ser:guid" />
       <xs:element minOccurs="0" name="OrderPrice" type="xs:decimal" />
       <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Status" type="ser:guid" />
       <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>
