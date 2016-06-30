@@ -51,7 +51,8 @@ namespace NewTests
                 };
 
 
-                var res = service.TestService(obj);
+                //var res = service.GetCalculationService(obj);
+                var res = service.GetStatus("11", DateTime.Now);
                 if (res != null)
                 {
                     Console.WriteLine(res);

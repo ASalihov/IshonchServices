@@ -25,7 +25,22 @@ namespace NewTests
         static void Main(string[] args)
         {
 
+            Console.WriteLine(ProductConsts.Status.a);
+
             var dt = "17/01/1979";
+            var dt2 = "1979-01-22";
+            var dates = new string[] { "1979-01-22", "1979-01-23", "17/01/1979" };
+            var formats = new string[] { "dd/MM/yyyy", "yyyy-MM-dd" };
+            DateTime datetime;
+            if (DateTime.TryParseExact(dt, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.NoCurrentDateDefault, out datetime))
+            {
+                Console.WriteLine("OK - " + datetime);
+            }
+
+            if (DateTime.TryParseExact(dt2, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.NoCurrentDateDefault, out datetime))
+            {
+                Console.WriteLine("OK - " + datetime);
+            }
             var cnvDate = Convert.ToDateTime(dt);
             
             var ish = new IshonchService(new ObjectCalculation
