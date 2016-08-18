@@ -4,6 +4,7 @@ using System.Text;
 using NewTests.OneCReference;
 using NewTests.TestServiceBPM;
 
+
 namespace NewTests
 {
     public class IshonchService
@@ -46,8 +47,8 @@ namespace NewTests
                     Id = new Guid("fa39a7dd-34e4-4ca0-83b0-d7503c55ffbf"),
                     Status = Guid.NewGuid(),
                     StartDate = DateTime.Now,
-                    OrderPrice = 125,
-                    UnitPrice = 126
+                    OrderPrice = 1266,
+                    UnitPrice = 12699
                 };
 
 

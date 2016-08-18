@@ -43,11 +43,11 @@ namespace NewTests
             });
 
             var bpm = new IshonchService("1", "2");
-            var xmlParser = new XmlParser();
+            //var xmlParser = new XmlParser();
             //xmlParser.LoadXmlDocument();
-            xmlParser.LoadScanJpg();
+            //xmlParser.LoadScanJpg();
 
-            //bpm.SendRequestToBPM();
+            bpm.SendRequestToBPM();
             //ish.SendRequestTo1C();
              
 
@@ -75,7 +75,7 @@ namespace NewTests
             */
 
 
-
+            /*
             var dict = new Dictionary<string, string> { {"1", "11"}, {"11", "3434"}, {"2","22"}, {"3","33"}};
             foreach (KeyValuePair<string, string> pair in dict)
             {
@@ -101,7 +101,7 @@ namespace NewTests
             Console.WriteLine(Encoding.UTF8.GetByteCount("150"));
 
             Console.WriteLine(DateTime.Now.Date.AddHours(5).ToLongTimeString());
-            Console.Read();
+            Console.Read();*/
         }
         public static string ByteToString(IEnumerable<byte> buff)
         {

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a56bed7a-c2fa-4014-9ba5-31c739d6ac43" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://94.158.53.231:5200/1/ServiceModel/ServiceBpm.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceBpm.xsd" MetadataType="Schema" ID="393f05d5-4bd3-49e2-b0e0-4cf46c0565b2" SourceId="1" SourceUrl="http://94.158.53.231:5200/1/ServiceModel/ServiceBpm.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceBpm.disco" MetadataType="Disco" ID="3071cd17-749d-4455-b9e3-1601e63a1bc6" SourceId="1" SourceUrl="http://94.158.53.231:5200/1/ServiceModel/ServiceBpm.svc?disco" />
+    <MetadataFile FileName="ServiceBpm.wsdl" MetadataType="Wsdl" ID="2a02b1af-b23c-4d8a-8574-76e54b0bfe6a" SourceId="1" SourceUrl="http://94.158.53.231:5200/1/ServiceModel/ServiceBpm.svc?wsdl" />
+    <MetadataFile FileName="ServiceBpm1.xsd" MetadataType="Schema" ID="e3df5351-d997-4b2a-b53c-900d464369cc" SourceId="1" SourceUrl="http://94.158.53.231:5200/1/ServiceModel/ServiceBpm.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceBpm2.xsd" MetadataType="Schema" ID="07a927ab-2240-45bb-944d-afdaf620736f" SourceId="1" SourceUrl="http://94.158.53.231:5200/1/ServiceModel/ServiceBpm.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceBpm1.wsdl" MetadataType="Wsdl" ID="906a0498-77b4-4bcf-96ee-a99816d48828" SourceId="1" SourceUrl="http://94.158.53.231:5200/1/ServiceModel/ServiceBpm.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
