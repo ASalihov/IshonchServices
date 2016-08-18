@@ -23,6 +23,9 @@ namespace NewTests.TestServiceBPM {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime EndDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -30,9 +33,6 @@ namespace NewTests.TestServiceBPM {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime StartDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid StatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal UnitPriceField;
@@ -44,6 +44,19 @@ namespace NewTests.TestServiceBPM {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime EndDate {
+            get {
+                return this.EndDateField;
+            }
+            set {
+                if ((this.EndDateField.Equals(value) != true)) {
+                    this.EndDateField = value;
+                    this.RaisePropertyChanged("EndDate");
+                }
             }
         }
         
@@ -87,19 +100,6 @@ namespace NewTests.TestServiceBPM {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid Status {
-            get {
-                return this.StatusField;
-            }
-            set {
-                if ((this.StatusField.Equals(value) != true)) {
-                    this.StatusField = value;
-                    this.RaisePropertyChanged("Status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal UnitPrice {
             get {
                 return this.UnitPriceField;
@@ -126,11 +126,17 @@ namespace NewTests.TestServiceBPM {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TestServiceBPM.IService")]
     public interface IService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/TestService", ReplyAction="http://tempuri.org/IService/TestServiceResponse")]
-        string TestService(NewTests.TestServiceBPM.CostCalculationObj obj);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCalculationService", ReplyAction="http://tempuri.org/IService/GetCalculationServiceResponse")]
+        string GetCalculationService(NewTests.TestServiceBPM.CostCalculationObj obj);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/TestService", ReplyAction="http://tempuri.org/IService/TestServiceResponse")]
-        System.Threading.Tasks.Task<string> TestServiceAsync(NewTests.TestServiceBPM.CostCalculationObj obj);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCalculationService", ReplyAction="http://tempuri.org/IService/GetCalculationServiceResponse")]
+        System.Threading.Tasks.Task<string> GetCalculationServiceAsync(NewTests.TestServiceBPM.CostCalculationObj obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStatus", ReplyAction="http://tempuri.org/IService/GetStatusResponse")]
+        string GetStatus(string statusId, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetStatus", ReplyAction="http://tempuri.org/IService/GetStatusResponse")]
+        System.Threading.Tasks.Task<string> GetStatusAsync(string statusId, System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/TestService2", ReplyAction="http://tempuri.org/IService/TestService2Response")]
         string TestService2(NewTests.TestServiceBPM.CostCalculationObj obj);
@@ -166,12 +172,20 @@ namespace NewTests.TestServiceBPM {
                 base(binding, remoteAddress) {
         }
         
-        public string TestService(NewTests.TestServiceBPM.CostCalculationObj obj) {
-            return base.Channel.TestService(obj);
+        public string GetCalculationService(NewTests.TestServiceBPM.CostCalculationObj obj) {
+            return base.Channel.GetCalculationService(obj);
         }
         
-        public System.Threading.Tasks.Task<string> TestServiceAsync(NewTests.TestServiceBPM.CostCalculationObj obj) {
-            return base.Channel.TestServiceAsync(obj);
+        public System.Threading.Tasks.Task<string> GetCalculationServiceAsync(NewTests.TestServiceBPM.CostCalculationObj obj) {
+            return base.Channel.GetCalculationServiceAsync(obj);
+        }
+        
+        public string GetStatus(string statusId, System.DateTime date) {
+            return base.Channel.GetStatus(statusId, date);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetStatusAsync(string statusId, System.DateTime date) {
+            return base.Channel.GetStatusAsync(statusId, date);
         }
         
         public string TestService2(NewTests.TestServiceBPM.CostCalculationObj obj) {

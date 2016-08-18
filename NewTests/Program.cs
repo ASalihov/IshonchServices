@@ -24,6 +24,24 @@ namespace NewTests
     {
         static void Main(string[] args)
         {
+
+            Console.WriteLine(ProductConsts.Status.a);
+
+            var dt = "17/01/1979";
+            var dt2 = "1979-01-22";
+            var dates = new string[] { "1979-01-22", "1979-01-23", "17/01/1979" };
+            var formats = new string[] { "dd/MM/yyyy", "yyyy-MM-dd" };
+            DateTime datetime;
+            if (DateTime.TryParseExact(dt, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.NoCurrentDateDefault, out datetime))
+            {
+                Console.WriteLine("OK - " + datetime);
+            }
+
+            if (DateTime.TryParseExact(dt2, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.NoCurrentDateDefault, out datetime))
+            {
+                Console.WriteLine("OK - " + datetime);
+            }
+            var cnvDate = Convert.ToDateTime(dt);
             
             var ish = new IshonchService(new ObjectCalculation
             {
@@ -43,7 +61,7 @@ namespace NewTests
             });
 
             var bpm = new IshonchService("1", "2");
-            //var xmlParser = new XmlParser();
+            var xmlParser = new XmlParser();
             //xmlParser.LoadXmlDocument();
             //xmlParser.LoadScanJpg();
 
@@ -75,7 +93,7 @@ namespace NewTests
             */
 
 
-            /*
+
             var dict = new Dictionary<string, string> { {"1", "11"}, {"11", "3434"}, {"2","22"}, {"3","33"}};
             foreach (KeyValuePair<string, string> pair in dict)
             {
@@ -101,7 +119,7 @@ namespace NewTests
             Console.WriteLine(Encoding.UTF8.GetByteCount("150"));
 
             Console.WriteLine(DateTime.Now.Date.AddHours(5).ToLongTimeString());
-            Console.Read();*/
+            Console.Read();
         }
         public static string ByteToString(IEnumerable<byte> buff)
         {

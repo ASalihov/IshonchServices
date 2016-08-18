@@ -4,7 +4,6 @@ using System.Text;
 using NewTests.OneCReference;
 using NewTests.TestServiceBPM;
 
-
 namespace NewTests
 {
     public class IshonchService
@@ -45,14 +44,15 @@ namespace NewTests
                 var obj = new CostCalculationObj
                 {
                     Id = new Guid("fa39a7dd-34e4-4ca0-83b0-d7503c55ffbf"),
-                    Status = Guid.NewGuid(),
+                    EndDate = DateTime.Now.AddHours(5),
                     StartDate = DateTime.Now,
-                    OrderPrice = 1266,
-                    UnitPrice = 12699
+                    OrderPrice = 10,
+                    UnitPrice = 12
                 };
 
 
-                var res = service.TestService(obj);
+                //var res = service.GetCalculationService(obj);
+                var res = service.GetStatus("11", DateTime.Now);
                 if (res != null)
                 {
                     Console.WriteLine(res);

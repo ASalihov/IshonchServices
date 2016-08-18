@@ -9,11 +9,21 @@ using System.IO;
 
 namespace NewTests
 {
-    public class XmlParser
+    public static class ProductConsts
     {
-        public void LoadXmlDocument()
+        public static class Status
         {
-            var dict = new Dictionary<string, string>
+            public static string a
+            {
+                get { return "s"; }
+            }
+        }
+    }
+        public class XmlParser
+        {
+            public void LoadXmlDocument()
+            {
+                var dict = new Dictionary<string, string>
             {
                 {"_PassportNumber"          , ""},
                 {"_DateOfIssue"             , ""},
@@ -32,25 +42,29 @@ namespace NewTests
                 {"_TopJinsi"                , ""}
             };
 
-            var xmlDoc = new XmlDocument();
-            xmlDoc.Load("http://94.158.53.231:5200/xml.xml");
+                var xmlDoc = new XmlDocument();
+                xmlDoc.Load("http://94.158.53.231:5200/rest.xml");
 
-            XmlElement Uz_Passport_MRZxRoot = xmlDoc.DocumentElement;
+                XmlElement Uz_Passport_MRZxRoot = xmlDoc.DocumentElement;
 
-            var passportItems = Uz_Passport_MRZxRoot.FirstChild;
-            foreach (XmlNode item in passportItems)
-            {
-                dict[item.Name] = item.InnerText;
+                var passportItems = Uz_Passport_MRZxRoot.FirstChild;
+                foreach (XmlNode item in passportItems)
+                {
+                    dict[item.Name] = item.InnerText;
+                }
             }
-        }
 
-        public void LoadScanJpg()
-        {
-            
-            var webClient = new WebClient();
-            byte[] imageBytes = webClient.DownloadData("http://94.158.53.231:5200/1.jpg");
-            var a = imageBytes;
+            public void LoadScanJpg()
+            {
+
+                var webClient = new WebClient();
+                byte[] imageBytes = webClient.DownloadData("http://94.158.53.231:5200/1.jpg");
+
+                MemoryStream ms = new MemoryStream();
+                ms.Write(imageBytes, 0, imageBytes.Length);
+                var a = 7;
+
+            }
+
         }
-        
     }
-}
